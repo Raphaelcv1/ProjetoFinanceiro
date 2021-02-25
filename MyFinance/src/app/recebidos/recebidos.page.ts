@@ -1,4 +1,7 @@
+import { ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
+import { FormComponent } from './form/form.component';
+
 
 @Component({
   selector: 'app-recebidos',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecebidosPage implements OnInit {
 
-  constructor() { }
+  constructor(public modalController: ModalController) { }
 
   ngOnInit() {
   }
+
+  async chamarFormulario() {
+    const modal = await this.modalController.create({
+      component: FormComponent
+    });
+    return await modal.present();
+  }
+
 
 }
