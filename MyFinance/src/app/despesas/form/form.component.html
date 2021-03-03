@@ -1,12 +1,12 @@
 <ion-header>
   <ion-toolbar>
 
-    <ion-title>ADD Recebido</ion-title>
+    <ion-title>ADD Despesa</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="excluirLancamento()">
         <ion-icon name="trash-outline" color="danger"></ion-icon>
       </ion-button>
-      <ion-button (click)="formR.valid && salvarLancamento()" [disabled]="!formR.valid">
+      <ion-button (click)="formD.valid && salvarLancamento()" [disabled]="!formD.valid">
         <ion-icon name="save-outline" color="success"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -15,7 +15,7 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="formR">
+  <form [formGroup]="formD">
     <ion-item>
       <ion-label position="floating">Descrição*</ion-label>
       <ion-input name="descricao" formControlName="descricao" placeholder="Descrição"
@@ -40,16 +40,16 @@
       <ion-input formControlName="quantidadeVezes" [(ngModel)]="lancamento.quantidadeVezes" type="number"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Recebido?</ion-label>
+      <ion-label>Pago?</ion-label>
       <ion-toggle formControlName="situacao" [(ngModel)]="lancamento.situacao" color="success"></ion-toggle>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Categoria</ion-label>
       <ion-select formControlName="categoria" cancelText="Cancelar" interface="action-sheet"
         [(ngModel)]="lancamento.categoria">
-        <ion-select-option value="Salário">Salário</ion-select-option>
-        <ion-select-option value="Aluguel">Aluguel</ion-select-option>
-        <ion-select-option value="Vendas">Vendas</ion-select-option>
+        <ion-select-option value="Alimentação">Alimentação</ion-select-option>
+        <ion-select-option value="Casa">Casa</ion-select-option>
+        <ion-select-option value="Veículo">Veículo</ion-select-option>
         <ion-select-option value="Outro">Outro</ion-select-option>
       </ion-select>
     </ion-item>

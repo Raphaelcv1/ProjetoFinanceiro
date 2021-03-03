@@ -3,10 +3,42 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>despesas</ion-title>
+    <ion-title script="align:center">Despesas</ion-title>
+
+    <ion-toolbar color="danger">
+      <ion-grid>
+        <ion-row>
+          <ion-col script="align:center">
+            <!-- <center> -->
+            <ion-icon name="chevron-back-outline"></ion-icon>
+            <!-- </center> -->
+          </ion-col>
+          <ion-col>
+            <ion-title script="align:center">
+              <!-- <center> -->
+              <h5>Outubro/2020</h5>
+              <!-- </center> -->
+            </ion-title>
+          </ion-col>
+          <ion-col>
+            <!-- <center> -->
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+            <!-- </center> -->
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
 </ion-content>
+
+<ion-footer>
+  <ion-fab vertical="bottom" horizontal="end" (click)="chamarFormularioD()">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-footer>

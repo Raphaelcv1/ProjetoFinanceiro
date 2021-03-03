@@ -13,15 +13,13 @@ export class RecebidosPage implements OnInit {
   constructor(public modalController: ModalController) { }
 
   ngOnInit() {
-
   }
 
-  async chamarFormulario() {
+  async chamarFormularioR() {
     const modal = await this.modalController.create({
       component: FormComponent
     });
     return await modal.present();
   }
-
 
 }
