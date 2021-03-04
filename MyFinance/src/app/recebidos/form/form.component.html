@@ -3,10 +3,10 @@
 
     <ion-title>ADD Recebido</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="excluirLancamento()">
+      <ion-button (click)="dismiss()">
         <ion-icon name="trash-outline" color="danger"></ion-icon>
       </ion-button>
-      <ion-button (click)="formR.valid && salvarLancamento()" [disabled]="!formR.valid">
+      <ion-button (click)="dismiss()">
         <ion-icon name="save-outline" color="success"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -30,9 +30,9 @@
   </ion-item>
   <ion-item>
     <ion-label>Repetir o Lançamento</ion-label>
-    <ion-toggle color="success"></ion-toggle>
+    <ion-toggle [(ngModel)]="repetirLancamento" color="success"></ion-toggle>
   </ion-item>
-  <ion-item>
+  <ion-item *ngIf="repetirLancamento==1" >
     <ion-label position="floating">Quantidade de vezes?</ion-label>
     <ion-input type="number"></ion-input>
   </ion-item>

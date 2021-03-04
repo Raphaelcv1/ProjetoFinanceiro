@@ -1,3 +1,4 @@
+import { ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
+  repetirLancamento = false;
 
-  constructor() { }
+  constructor(public modalCtrl: ModalController) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+  dismiss() {
+    this.modalCtrl.dismiss({
+      'dismissed': true
+    });
+  }
 
 }

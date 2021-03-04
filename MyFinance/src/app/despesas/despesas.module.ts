@@ -1,3 +1,4 @@
+import { FormComponent } from './form/form.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +16,6 @@ import { DespesasPage } from './despesas.page';
     IonicModule,
     DespesasPageRoutingModule
   ],
-  declarations: [DespesasPage]
+  declarations: [DespesasPage, FormComponent]
 })
 export class DespesasPageModule {}

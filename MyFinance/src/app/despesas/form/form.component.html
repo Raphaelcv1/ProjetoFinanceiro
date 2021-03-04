@@ -30,9 +30,9 @@
   </ion-item>
   <ion-item>
     <ion-label>Repetir o Lançamento</ion-label>
-    <ion-toggle color="success"></ion-toggle>
+    <ion-toggle [(ngModel)]="repetirLancamento" color="success"></ion-toggle>
   </ion-item>
-  <ion-item>
+  <ion-item *ngIf="repetirLancamento==1" >
     <ion-label position="floating">Quantidade de vezes?</ion-label>
     <ion-input type="number"></ion-input>
   </ion-item>
