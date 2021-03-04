@@ -1,3 +1,4 @@
+import { Lancamentos } from './../model/lancamentos';
 import { ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { FormComponent } from './form/form.component';
