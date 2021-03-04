@@ -17,16 +17,16 @@
 <ion-content>
   <ion-item>
     <ion-label position="floating">Descrição*</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="lancamento.descricao"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Data</ion-label>
-    <ion-datetime cancelText="Cancelar" doneText="Ok" max="2050-12-09" displayFormat="DD/MM/YYYY"
+    <ion-datetime [(ngModel)]="lancamento.dataLancamento" cancelText="Cancelar" doneText="Ok" max="2050-12-09" displayFormat="DD/MM/YYYY"
       placeholder="Selecione uma Data"></ion-datetime>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Valor*</ion-label>
-    <ion-input></ion-input>
+    <ion-input>[(ngModel)]="lancamento.valor"</ion-input>
   </ion-item>
   <ion-item>
     <ion-label>Repetir o Lançamento</ion-label>
@@ -34,15 +34,15 @@
   </ion-item>
   <ion-item *ngIf="repetirLancamento==1" >
     <ion-label position="floating">Quantidade de vezes?</ion-label>
-    <ion-input type="number"></ion-input>
+    <ion-input [(ngModel)]="lancamento.quantidadeVezes" type="number"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label>Recebido?</ion-label>
-    <ion-toggle color="success"></ion-toggle>
+    <ion-toggle [(ngModel)]="lancamento.situacao" color="success"></ion-toggle>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Categoria</ion-label>
-    <ion-select cancelText="Cancelar" interface="action-sheet">
+    <ion-select [(ngModel)]="lancamento.categoria" cancelText="Cancelar" interface="action-sheet">
       <ion-select-option value="Salário">Salário</ion-select-option>
       <ion-select-option value="Aluguel">Aluguel</ion-select-option>
       <ion-select-option value="Vendas">Vendas</ion-select-option>

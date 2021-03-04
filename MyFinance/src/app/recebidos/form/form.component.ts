@@ -1,3 +1,4 @@
+import { Lancamentos } from './../../model/lancamentos';
 import { ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
   repetirLancamento = false;
+  lancamento:Lancamentos;
 
   constructor(public modalCtrl: ModalController) { }
 
