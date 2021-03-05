@@ -27,7 +27,7 @@ export class LancamentosService {
     return this.lancamentoObject.update(lan);
   }
 
-  removerPorId(id: string) {
+  removerLancamento(id: string) {
     this.buscarPorId(id);
     this.lancamentoObject.remove();
   }
