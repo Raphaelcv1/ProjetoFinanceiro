@@ -12,7 +12,20 @@ export class FormComponent implements OnInit {
   repetirLancamento = false;
   lancamento: Lancamentos;
 
-  constructor(public modalCtrl: ModalController, public lancamentoService: LancamentosService) { }
+  constructor(public modalCtrl: ModalController, public lancamentoService: LancamentosService) { 
+    this.lancamento = {
+      key: '',
+      descricao: '',
+      valor: 0,
+      valorString: '00',
+      tipo: 'recebido',
+      categoria: 'Salário',
+      dataLacamento: new Date().toISOString(),
+      quantidadeVezes: 1,
+      repetirLancamento: false,
+      situacao: true
+    };
+  }
 
   ngOnInit() { }
 

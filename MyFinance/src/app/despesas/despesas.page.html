@@ -33,6 +33,17 @@
 </ion-header>
 
 <ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let lancamento of listaLancamentos">
+      <ion-label>
+        <h4>{{lancamento.descricao}}</h4>
+        <p>{{lancamento.categoria}}</p>
+      </ion-label>
+      <h6>{{lancamento.valor}}</h6>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
 
 <ion-footer>
