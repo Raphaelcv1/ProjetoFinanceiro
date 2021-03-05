@@ -26,6 +26,16 @@ export class DespesasPage implements OnInit {
     })
   }
 
+  async alterarLancamentoD(key) {
+    const modal = await this.modalController.create({
+      component: FormComponent,
+      componentProps: {
+        'key': key
+      }
+    });
+    return await modal.present();
+  }
+
   async chamarFormularioD() {
     const modal = await this.modalController.create({
       component: FormComponent

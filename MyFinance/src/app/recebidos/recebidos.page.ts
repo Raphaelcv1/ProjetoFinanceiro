@@ -26,6 +26,16 @@ export class RecebidosPage implements OnInit {
     })
   }
 
+  async alterarLancamentoR(key) {
+    const modal = await this.modalController.create({
+      component: FormComponent,
+      componentProps: {
+        'key': key
+      }
+    });
+    return await modal.present();
+  }
+
   async chamarFormularioR() {
     const modal = await this.modalController.create({
       component: FormComponent

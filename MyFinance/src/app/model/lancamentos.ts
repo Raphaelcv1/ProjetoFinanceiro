@@ -15,7 +15,7 @@ export class Lancamentos {
     valorString: string;
     tipo: string;
     categoria: string;
-    dataLacamento: string;
+    dataLancamento: string;
     quantidadeVezes: number;
     situacao: boolean;
     repetirLancamento: boolean;

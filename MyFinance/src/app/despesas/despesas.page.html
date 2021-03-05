@@ -35,7 +35,7 @@
 <ion-content>
 
   <ion-list>
-    <ion-item *ngFor="let lancamento of listaLancamentos">
+    <ion-item *ngFor="let lancamento of listaLancamentos" (click)="alterarLancamentoD(lancamento.key)">
       <ion-label>
         <h4>{{lancamento.descricao}}</h4>
         <p>{{lancamento.categoria}}</p>
