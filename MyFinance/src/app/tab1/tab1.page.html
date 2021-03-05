@@ -8,22 +8,22 @@
   <ion-toolbar color="warning">
     <ion-grid>
       <ion-row>
-        <ion-col>
-          <center>
+        <ion-col script="align:center">
+          <!-- <center> -->
             <ion-icon name="chevron-back-outline"></ion-icon>
-          </center>
+          <!-- </center> -->
         </ion-col>
         <ion-col>
-          <ion-title>
-            <center>
+          <ion-title script="align:center">
+            <!-- <center> -->
               <h4>Outubro/2020</h4>
-            </center>
+            <!-- </center> -->
           </ion-title>
         </ion-col>
-        <ion-col>
-          <center>
+        <ion-col script="align:center">
+          <!-- <center> -->
             <ion-icon name="chevron-forward-outline"></ion-icon>
-          </center>
+          <!-- </center> -->
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -35,11 +35,11 @@
   <ion-header>
     <ion-toolbar color="warning">
       <!-- <ion-title size="large">Tab 1</ion-title> -->
-      <ion-text>
-        <center>
+      <ion-text script="align:center">
+        <!-- <center> -->
           <h2>Saldo Mês</h2>
-          <h4>R$ 100</h4>
-        </center>
+          <h4>R$ {{saldoMes}}</h4>
+        <!-- </center> -->
       </ion-text>
     </ion-toolbar>
   </ion-header>
@@ -52,7 +52,7 @@
             <h2>Recebidos</h2>
           </ion-col>
           <ion-col>
-            <h2>R$ 100</h2>
+            <h2>R$ {{valorRecebido}}</h2>
           </ion-col>
         </ion-row>
 
@@ -61,7 +61,7 @@
             <h3>À Receber</h3>
           </ion-col>
           <ion-col>
-            <h3>R$ 100</h3>
+            <h3>R$ {{valorReceber}}</h3>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -76,7 +76,7 @@
             <h2>Despesas</h2>
           </ion-col>
           <ion-col>
-            <h2>R$ 0</h2>
+            <h2>R$ {{valorDespesa}}</h2>
           </ion-col>
         </ion-row>
 
@@ -85,7 +85,7 @@
             <h3>À Pagar</h3>
           </ion-col>
           <ion-col>
-            <h3>R$ 00</h3>
+            <h3>R$ {{valorPagar}}</h3>
           </ion-col>
         </ion-row>
       </ion-grid>

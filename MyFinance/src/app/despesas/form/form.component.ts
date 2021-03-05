@@ -28,7 +28,7 @@ export class FormComponent implements OnInit {
         descricao: '',
         valor: 0,
         valorString: '00',
-        tipo: 'recebido',
+        tipo: 'despesa',
         categoria: 'Salário',
         dataLancamento: new Date().toISOString(),
         quantidadeVezes: 1,
