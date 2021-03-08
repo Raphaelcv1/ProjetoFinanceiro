@@ -9,12 +9,15 @@ import { DespesasPageRoutingModule } from './despesas-routing.module';
 
 import { DespesasPage } from './despesas.page';
 
+import { BrMaskerModule } from 'br-mask';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DespesasPageRoutingModule
+    DespesasPageRoutingModule,
+    BrMaskerModule
   ],
   declarations: [DespesasPage, FormComponent]
 })
