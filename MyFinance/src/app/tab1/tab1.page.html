@@ -8,23 +8,25 @@
   <ion-toolbar color="warning">
     <ion-grid>
       <ion-row>
-        <ion-col script="align:center">
-          <!-- <center> -->
-            <ion-icon name="chevron-back-outline"></ion-icon>
-          <!-- </center> -->
-        </ion-col>
+        <!-- <ion-col style="text-align:center"> -->
+          <!-- <ion-icon name="chevron-back-outline" (click)="retornaMes()"></ion-icon> -->
+          <!-- <ion-icon name="chevron-back-outline" ></ion-icon> -->
+        <!-- </ion-col> -->
         <ion-col>
-          <ion-title script="align:center">
-            <!-- <center> -->
-              <h4>Outubro/2020</h4>
-            <!-- </center> -->
-          </ion-title>
+          <!-- <ion-title style="text-align:center"> -->
+            <!-- <h6>Outubro/2020</h6> -->
+            <!-- <ion-item > -->
+              <ion-datetime style="text-align: center; width: auto;" display-format="MMMM / YYYY" [(ngModel)]="mes"
+                monthNames="Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro"
+                (ionChange)="mudaMes()">
+              </ion-datetime>
+            <!-- </ion-item> -->
+          <!-- </ion-title> -->
         </ion-col>
-        <ion-col script="align:center">
-          <!-- <center> -->
-            <ion-icon name="chevron-forward-outline"></ion-icon>
-          <!-- </center> -->
-        </ion-col>
+        <!-- <ion-col style="text-align:center"> -->
+          <!-- <ion-icon name="chevron-forward-outline" ></ion-icon> -->
+          <!-- <ion-icon name="chevron-forward-outline" (click)="avancaMes()"></ion-icon> -->
+        <!-- </ion-col> -->
       </ion-row>
     </ion-grid>
   </ion-toolbar>
@@ -35,10 +37,10 @@
   <ion-header>
     <ion-toolbar color="warning">
       <!-- <ion-title size="large">Tab 1</ion-title> -->
-      <ion-text script="align:center">
+      <ion-text style="text-align:center">
         <!-- <center> -->
-          <h2>Saldo Mês</h2>
-          <h4>R$ {{saldoMes}}</h4>
+        <h2>Saldo Mês</h2>
+        <h4>R$ {{saldoMes}}</h4>
         <!-- </center> -->
       </ion-text>
     </ion-toolbar>

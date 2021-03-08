@@ -11,17 +11,23 @@ import { FormComponent } from './form/form.component';
 })
 export class DespesasPage implements OnInit {
   listaLancamentos = [];
+  mes = new Date().toISOString();
 
   constructor(public modalController: ModalController, public lancamentoService: LancamentosService) { }
 
   ngOnInit() {
     let lancamentos = this.lancamentoService.buscarTodos();
+    let mesAno = new Date(this.mes).getMonth().toString() + new Date(this.mes).getFullYear().toString();
+
     lancamentos.snapshotChanges().subscribe(res => {
       this.listaLancamentos = [];
       res.forEach(item => {
         let a = item.payload.toJSON();
-        a['key'] = item.key;
-        this.listaLancamentos.push(a as Lancamentos);
+        let datLanc = new Date(a['dataLancamento']).getMonth().toString() + new Date(a['dataLancamento']).getFullYear().toString();
+        if (datLanc == mesAno && a['tipo'] == "despesa") {
+          a['key'] = item.key;
+          this.listaLancamentos.push(a as Lancamentos);
+        }
       })
     })
   }
@@ -41,6 +47,10 @@ export class DespesasPage implements OnInit {
       component: FormComponent
     });
     return await modal.present();
+  }
+
+  mudaMes() {
+    this.ngOnInit();
   }
 
 }
