@@ -8,13 +8,15 @@ import { RecebidosPageRoutingModule } from './recebidos-routing.module';
 
 import { RecebidosPage } from './recebidos.page';
 import { FormComponent } from './form/form.component';
+import { BrMaskerModule } from 'br-mask';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RecebidosPageRoutingModule
+    RecebidosPageRoutingModule,
+    BrMaskerModule
   ],
   declarations: [RecebidosPage, FormComponent],
   entryComponents:[FormComponent]

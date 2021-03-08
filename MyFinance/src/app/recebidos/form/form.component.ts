@@ -14,7 +14,8 @@ export class FormComponent implements OnInit {
   lancamento: Lancamentos;
   @Input() key: string;
 
-  constructor(public modalCtrl: ModalController, public lancamentoService: LancamentosService, public alertController: AlertController) {
+  constructor(public modalCtrl: ModalController, public lancamentoService: LancamentosService,
+    public alertController: AlertController) {
   }
 
   ngOnInit() {
