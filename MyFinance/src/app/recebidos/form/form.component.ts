@@ -101,8 +101,8 @@ export class FormComponent implements OnInit {
             nLancamento = this.lancamento;
             dLanc = this.addMes((dLanc));
             nLancamento.dataLancamento = dLanc;
-            this.lancamentoService.criarLancamento(nLancamento).then(res =>{
-              if (i >= this.lancamento.quantidadeVezes){
+            this.lancamentoService.criarLancamento(nLancamento).then(res => {
+              if (i >= this.lancamento.quantidadeVezes) {
                 this.dismiss();
               }
             });

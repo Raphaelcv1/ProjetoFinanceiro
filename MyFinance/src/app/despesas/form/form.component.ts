@@ -71,9 +71,45 @@ export class FormComponent implements OnInit {
 
   }
 
+  addMes(dat) {
+    let mes = new Date(dat).getMonth() + 1;
+    let ano = new Date(dat).getFullYear();
+    if (mes > 11) {
+      mes = mes - 11;
+      ano = ano + 1;
+    }
+    let nDat = new Date(dat);
+    nDat.setMonth(mes);
+    nDat.setFullYear(ano);
+    return new Date(nDat).toISOString();
+  }
+
   salvarLancamento() {
+
+    this.lancamento.valor = parseFloat(this.lancamento.valor.toString().replace(',', '.'));
+    let dLanc = new Date(this.lancamento.dataLancamento).toISOString();
+    
     if (this.key == undefined) {
       this.lancamentoService.criarLancamento(this.lancamento).then(res => {
+
+        if (this.lancamento.repetirLancamento == true) {
+          console.log("entrou");
+          for (let i = 1; i < this.lancamento.quantidadeVezes; i++) {
+            console.log(this.lancamento.dataLancamento);
+            let nLancamento: Lancamentos = new Lancamentos();
+            nLancamento = this.lancamento;
+            dLanc = this.addMes((dLanc));
+            nLancamento.dataLancamento = dLanc;
+            this.lancamentoService.criarLancamento(nLancamento).then(res => {
+              if (i >= this.lancamento.quantidadeVezes) {
+                this.dismiss();
+              }
+            });
+          }
+        } else {
+          this.dismiss();
+        }
+
         console.log(res);
         this.dismiss();
       }).catch(error => console.log(error));

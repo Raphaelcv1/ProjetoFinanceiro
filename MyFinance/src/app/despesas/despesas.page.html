@@ -4,28 +4,28 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title script="align:center">Despesas</ion-title>
-
-    <ion-toolbar color="danger">
-      <ion-grid>
-        <ion-row>
-          <!-- <ion-col script="align:center">
+  </ion-toolbar>
+  <ion-toolbar color="danger">
+    <ion-grid>
+      <ion-row>
+        <!-- <ion-col script="align:center">
             <ion-icon name="chevron-back-outline"></ion-icon>
           </ion-col> -->
-          <ion-col>
-            <!-- <ion-title script="align:center"> -->
-              <!-- <h5>Outubro/2020</h5> -->
-              <ion-datetime style="text-align: center; width: auto;" display-format="MMMM / YYYY" [(ngModel)]="mes"
-                monthNames="Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro"
-                (ionChange)="mudaMes()">
-              </ion-datetime>
-            <!-- </ion-title> -->
-          </ion-col>
-          <!-- <ion-col>
+        <ion-col>
+          <!-- <ion-title script="align:center"> -->
+          <!-- <h5>Outubro/2020</h5> -->
+          <ion-datetime style="text-align: center; width: auto;" display-format="MMMM / YYYY" [(ngModel)]="mes"
+            monthNames="Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro"
+            (ionChange)="mudaMes()" max="2050-12-09">
+          </ion-datetime>
+          <!-- </ion-title> -->
+        </ion-col>
+        <!-- <ion-col>
             <ion-icon name="chevron-forward-outline"></ion-icon>
           </ion-col> -->
-        </ion-row>
-      </ion-grid>
-    </ion-toolbar>
+      </ion-row>
+    </ion-grid>
+    <!-- </ion-toolbar> -->
 
   </ion-toolbar>
 </ion-header>

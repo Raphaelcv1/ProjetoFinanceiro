@@ -12,8 +12,10 @@ export class Tab1Page implements OnInit {
   saldoMes = 0;
   valorRecebido = 0;
   valorReceber = 0;
+  valorAtrasadoReceber = 0;
   valorDespesa = 0;
   valorPagar = 0;
+  valorAtrasadoPagar = 0;
   // numberMes = new Date().toISOString();
   mes = new Date().toISOString();
 
@@ -26,9 +28,13 @@ export class Tab1Page implements OnInit {
       this.saldoMes = 0;
       this.valorRecebido = 0;
       this.valorReceber = 0;
+      this.valorAtrasadoReceber = 0;
       this.valorDespesa = 0;
       this.valorPagar = 0;
+      this.valorAtrasadoPagar = 0;
       let mesAno = new Date(this.mes).getMonth().toString() + new Date(this.mes).getFullYear().toString();
+      let dataHj = new Date();
+      dataHj.setHours(0, 0, 0, 0);
 
       res.forEach(item => {
         let a = item.payload.toJSON();
@@ -40,18 +46,27 @@ export class Tab1Page implements OnInit {
             if (a['situacao'] == 1) {
               this.valorRecebido += parseFloat(a['valor']);
             } else {
-              this.valorReceber += parseFloat(a['valor']);
+              if (new Date(a['dataLancamento']).getTime() < dataHj.getTime()) {
+                this.valorAtrasadoReceber += parseFloat(a['valor']);
+              } else {
+                this.valorReceber += parseFloat(a['valor']);
+              }
             }
           } else {
             if (a['situacao'] == 1) {
               this.valorDespesa += parseFloat(a['valor']);
             } else {
-              this.valorPagar += parseFloat(a['valor']);
+              if (new Date(a['dataLancamento']).getTime() < dataHj.getTime()) {
+                this.valorAtrasadoPagar += parseFloat(a['valor']);
+              } else {
+                this.valorPagar += parseFloat(a['valor']);
+              }
             }
           }
         }
       })
-      this.saldoMes = (this.valorRecebido + this.valorReceber) - (this.valorDespesa + this.valorPagar);
+      // this.saldoMes = (this.valorRecebido + this.valorReceber) - (this.valorDespesa + this.valorPagar);
+      this.saldoMes = (this.valorRecebido ) - (this.valorDespesa );
     })
   }
 

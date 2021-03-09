@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title style="text-align:center">
       My Finance
     </ion-title>
   </ion-toolbar>
@@ -36,12 +36,9 @@
 <ion-content [fullscreen]="true">
   <ion-header>
     <ion-toolbar color="warning">
-      <!-- <ion-title size="large">Tab 1</ion-title> -->
       <ion-text style="text-align:center">
-        <!-- <center> -->
         <h2>Saldo Mês</h2>
         <h4>{{saldoMes | currency:"BRL"}}</h4>
-        <!-- </center> -->
       </ion-text>
     </ion-toolbar>
   </ion-header>
@@ -66,6 +63,16 @@
             <h3>{{valorReceber | currency:"BRL"}}</h3>
           </ion-col>
         </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <h3>Atrasado</h3>
+          </ion-col>
+          <ion-col>
+            <h3>{{valorAtrasadoReceber | currency:"BRL"}}</h3>
+          </ion-col>
+        </ion-row>
+
       </ion-grid>
     </ion-card-content>
   </ion-card>
@@ -88,6 +95,15 @@
           </ion-col>
           <ion-col>
             <h3>{{valorPagar | currency:"BRL"}}</h3>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <h3>Atrasado</h3>
+          </ion-col>
+          <ion-col>
+            <h3>{{valorAtrasadoPagar | currency:"BRL"}}</h3>
           </ion-col>
         </ion-row>
       </ion-grid>
