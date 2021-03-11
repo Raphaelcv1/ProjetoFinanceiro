@@ -18,7 +18,7 @@
           <!-- <ion-item > -->
           <ion-datetime style="text-align: center; width: auto;" display-format="MMMM / YYYY" [(ngModel)]="mes"
             monthNames="Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro"
-            (ionChange)="mudaMes()">
+            (ionChange)="mudaMes()" max="2050-12-09">
           </ion-datetime>
           <!-- </ion-item> -->
           <!-- </ion-title> -->
@@ -109,6 +109,8 @@
       </ion-grid>
     </ion-card-content>
   </ion-card>
+
+  
 
 
   <!--<app-explore-container name="Tab 1 page"></app-explore-container>-->

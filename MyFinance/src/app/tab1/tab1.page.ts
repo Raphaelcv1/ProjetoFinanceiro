@@ -1,3 +1,4 @@
+import { AdmobService } from './../services/admob.service';
 import { LancamentosService } from './../services/lancamentos.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -19,7 +20,8 @@ export class Tab1Page implements OnInit {
   // numberMes = new Date().toISOString();
   mes = new Date().toISOString();
 
-  constructor(public router: Router, public lancamentoService: LancamentosService, public modalCtrl: ModalController) { }
+  constructor(public router: Router, public lancamentoService: LancamentosService,
+    public modalCtrl: ModalController, private admobService: AdmobService) { }
 
   ngOnInit() {
 
@@ -39,9 +41,13 @@ export class Tab1Page implements OnInit {
       res.forEach(item => {
         let a = item.payload.toJSON();
         let datLanc = new Date(a['dataLancamento']).getMonth().toString() + new Date(a['dataLancamento']).getFullYear().toString();
-        // console.log(mesAno);
-        // console.log(datLanc);
-        if (datLanc == mesAno) {
+        console.log("conparando");
+        console.log(mesAno);
+        console.log(datLanc);
+        console.log(a['valor']);
+
+        if (datLanc === mesAno) {
+
           if (a['tipo'] == 'recebido') {
             if (a['situacao'] == 1) {
               this.valorRecebido += parseFloat(a['valor']);
@@ -66,8 +72,11 @@ export class Tab1Page implements OnInit {
         }
       })
       // this.saldoMes = (this.valorRecebido + this.valorReceber) - (this.valorDespesa + this.valorPagar);
-      this.saldoMes = (this.valorRecebido ) - (this.valorDespesa );
+      this.saldoMes = (this.valorRecebido) - (this.valorDespesa);
     })
+
+    this.admobService.showBanner();
+
   }
 
   chamarRecebidos() {

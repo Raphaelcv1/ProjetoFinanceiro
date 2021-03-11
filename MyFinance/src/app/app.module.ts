@@ -13,6 +13,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { environment } from './../environments/environment';
+import { AdMobFree } from '@ionic-native/admob-free/ngx';
+import { AdmobService } from './services/admob.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +25,11 @@ import { environment } from './../environments/environment';
     AngularFireDatabaseModule,
     AngularFireStorageModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    AdMobFree,
+    AdmobService,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
