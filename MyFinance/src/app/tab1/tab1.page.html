@@ -43,39 +43,39 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card color="success" (click)="chamarRecebidos()">
-    <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <h2>Recebidos</h2>
-          </ion-col>
-          <ion-col>
-            <h2>{{valorRecebido | currency:"BRL"}}</h2>
-          </ion-col>
-        </ion-row>
+    <ion-card color="success" (click)="chamarRecebidos()">
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <h2>Recebidos</h2>
+            </ion-col>
+            <ion-col>
+              <h2>{{valorRecebido | currency:"BRL"}}</h2>
+            </ion-col>
+          </ion-row>
 
-        <ion-row>
-          <ion-col>
-            <h3>À Receber</h3>
-          </ion-col>
-          <ion-col>
-            <h3>{{valorReceber | currency:"BRL"}}</h3>
-          </ion-col>
-        </ion-row>
+          <ion-row>
+            <ion-col>
+              <h3>À Receber</h3>
+            </ion-col>
+            <ion-col>
+              <h3>{{valorReceber | currency:"BRL"}}</h3>
+            </ion-col>
+          </ion-row>
 
-        <ion-row>
-          <ion-col>
-            <h3>Atrasado</h3>
-          </ion-col>
-          <ion-col>
-            <h3>{{valorAtrasadoReceber | currency:"BRL"}}</h3>
-          </ion-col>
-        </ion-row>
+          <ion-row>
+            <ion-col>
+              <h3>Atrasado</h3>
+            </ion-col>
+            <ion-col>
+              <h3>{{valorAtrasadoReceber | currency:"BRL"}}</h3>
+            </ion-col>
+          </ion-row>
 
-      </ion-grid>
-    </ion-card-content>
-  </ion-card>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
 
   <ion-card color="danger" (click)="chamarDespesas()">
     <ion-card-content>
